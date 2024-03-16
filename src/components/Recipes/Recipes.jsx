@@ -14,7 +14,7 @@ const Recipes = () => {
   return (
     <div className="grid grid-cols-2">
       {recipes.map((item) => (
-        <Recipe key={item.id}></Recipe>
+        <Recipe key={item.id} recipe={item}></Recipe>
       ))}
     </div>
   );

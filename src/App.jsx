@@ -3,6 +3,9 @@ import Recipes from "./components/Recipes/Recipes";
 import WantToCook from "./components/WantToCook";
 
 function App() {
+  const handleCookCart = () => {
+    console.log("object pawa geche");
+  };
   return (
     <>
       <div className="container mx-auto">
@@ -85,7 +88,7 @@ function App() {
 
       <div className="container mx-auto grid grid-cols-7">
         <div className="lg:col-span-4">
-          <Recipes></Recipes>
+          <Recipes handleCookCart={handleCookCart}></Recipes>
         </div>
         <div className="col-span-3 ">
           <WantToCook></WantToCook>
