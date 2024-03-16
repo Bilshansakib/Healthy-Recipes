@@ -4,18 +4,8 @@ import Recipes from "./components/Recipes/Recipes";
 import WantToCook from "./components/WantToCook";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Toaster } from "react-hot-toast";
 
 function App() {
-  const notify = () => {
-    <div className="toast">
-      <div className="alert alert-info">
-        <span>New message arrived.</span>
-      </div>
-    </div>;
-    toast("Default!");
-  };
-
   const [toCooks, setToCooks] = useState([]);
 
   const handleDelete = (id) => {
@@ -27,7 +17,9 @@ function App() {
     const isExist = toCooks.find((item) => item.id == cooking.id);
     if (!isExist) {
       setToCooks([...toCooks, cooking]);
-    } else notify();
+    } else {
+      toast("Already added to the card");
+    }
   };
 
   return (
@@ -178,13 +170,14 @@ function App() {
         <div className="lg:col-span-4 ">
           <Recipes handleCookCart={handleCookCart}></Recipes>
         </div>
+
         <div className="col-span-3 ">
-          <Toaster position="top-right"></Toaster>
           <WantToCook
             handleDelete={handleDelete}
             toCooks={toCooks}
           ></WantToCook>
         </div>
+        <ToastContainer></ToastContainer>
       </div>
     </>
   );

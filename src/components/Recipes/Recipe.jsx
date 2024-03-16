@@ -1,4 +1,4 @@
-const Recipe = ({ recipe, handleCookCart }) => {
+const Recipe = ({ recipe, handleCookCart, notify }) => {
   const {
     recipe_image,
     recipe_id,
