@@ -1,10 +1,17 @@
+import { useState } from "react";
 import "./App.css";
 import Recipes from "./components/Recipes/Recipes";
 import WantToCook from "./components/WantToCook";
 
 function App() {
-  const handleCookCart = () => {
-    console.log("object pawa geche");
+  const [toCooks, setToCooks] = useState([]);
+
+  const handleCookCart = (pd) => {
+    console.log(pd);
+    const isExist = toCooks.find((p) => p.id == pd.id);
+    if (!isExist) {
+      setToCooks([...toCooks, pd]);
+    } else alert("Cart already exists");
   };
   return (
     <>
@@ -91,7 +98,7 @@ function App() {
           <Recipes handleCookCart={handleCookCart}></Recipes>
         </div>
         <div className="col-span-3 ">
-          <WantToCook></WantToCook>
+          <WantToCook toCooks={toCooks}></WantToCook>
         </div>
       </div>
     </>

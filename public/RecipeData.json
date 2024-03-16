@@ -1,7 +1,7 @@
 [
   {
     "recipe_image": "recipe1.jpg",
-    "recipe_id": "1",
+    "id": "1",
     "recipe_name": "Chicken Alfredo Pasta",
     "short_description": "Creamy pasta dish with tender chicken pieces.",
     "ingredients": [
@@ -17,7 +17,7 @@
   },
   {
     "recipe_image": "recipe2.jpg",
-    "recipe_id": "2",
+    "id": "3",
     "recipe_name": "Vegetable Stir-Fry",
     "short_description": "Healthy and colorful stir-fried vegetables.",
     "ingredients": [
@@ -32,7 +32,7 @@
   },
   {
     "recipe_image": "recipe3.jpg",
-    "recipe_id": "3",
+    "id": "3",
     "recipe_name": "Classic Margherita Pizza",
     "short_description": "Traditional Italian pizza with tomato, mozzarella, and basil.",
     "ingredients": [
@@ -47,7 +47,7 @@
   },
   {
     "recipe_image": "recipe4.jpg",
-    "recipe_id": "4",
+    "id": "4",
     "recipe_name": "Grilled Salmon with Lemon and Dill",
     "short_description": "Juicy grilled salmon fillets with a refreshing lemon and dill sauce.",
     "ingredients": [
@@ -62,7 +62,7 @@
   },
   {
     "recipe_image": "recipe5.jpg",
-    "recipe_id": "5",
+    "id": "5",
     "recipe_name": "Banana Walnut Bread",
     "short_description": "Moist and delicious banana bread with crunchy walnuts.",
     "ingredients": [
@@ -78,7 +78,7 @@
   },
   {
     "recipe_image": "recipe6.jpg",
-    "recipe_id": "6",
+    "id": "6",
     "recipe_name": "Caprese Salad",
     "short_description": "Simple and fresh salad with tomatoes, mozzarella, and basil.",
     "ingredients": [

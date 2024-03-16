@@ -82,7 +82,7 @@ const Recipe = ({ recipe, handleCookCart }) => {
         <div className="card-actions">
           <button
             className="btn btn-primary"
-            onClick={() => handleCookCart(Recipe)}
+            onClick={() => handleCookCart(recipe)}
           >
             Want To Cook
           </button>
