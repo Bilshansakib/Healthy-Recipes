@@ -22,7 +22,7 @@ const WantToCook = ({ toCooks, index, handleDelete }) => {
               <button
                 key={item.id}
                 onClick={() => handleDelete(item.id)}
-                className="btn btn-primary"
+                className="btn btn-primary rounded-full"
               >
                 Preparing
               </button>

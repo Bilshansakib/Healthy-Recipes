@@ -9,13 +9,9 @@ const Recipe = ({ recipe, handleCookCart }) => {
     calories,
   } = recipe;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-96 bg-base-100 shadow-xl border-2">
       <figure className="px-10 pt-10">
-        <img
-          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-          className="rounded-xl"
-        />
+        <img src={recipe_image} alt="food" className="rounded-xl" />
       </figure>
       <div className="card-body items-start text-center">
         <h2 className="card-title">{recipe_name}</h2>
@@ -81,7 +77,7 @@ const Recipe = ({ recipe, handleCookCart }) => {
         </div>
         <div className="card-actions">
           <button
-            className="btn btn-primary"
+            className="btn btn-primary rounded-full"
             onClick={() => handleCookCart(recipe)}
           >
             Want To Cook

@@ -1,6 +1,6 @@
 [
   {
-    "recipe_image": "recipe1.jpg",
+    "recipe_image": "https://i.ibb.co/dBn1zr9/Chicken-Alfredo-Pasta.jpg",
     "id": "1",
     "recipe_name": "Chicken Alfredo Pasta",
     "short_description": "Creamy pasta dish with tender chicken pieces.",
@@ -16,7 +16,7 @@
     "calories": "450 calories"
   },
   {
-    "recipe_image": "recipe2.jpg",
+    "recipe_image": "https://i.ibb.co/bBx7xDj/soup.jpg",
     "id": "2",
     "recipe_name": "Vegetable Stir-Fry",
     "short_description": "Healthy and colorful stir-fried vegetables.",
@@ -31,7 +31,7 @@
     "calories": "280 calories"
   },
   {
-    "recipe_image": "recipe3.jpg",
+    "recipe_image": "https://i.ibb.co/0tYXJMc/shredded-chicken.jpg",
     "id": "3",
     "recipe_name": "Classic Margherita Pizza",
     "short_description": "Traditional Italian pizza with tomato, mozzarella, and basil.",
@@ -46,7 +46,7 @@
     "calories": "320 calories"
   },
   {
-    "recipe_image": "recipe4.jpg",
+    "recipe_image": "https://i.ibb.co/x6dd62R/best-chikenn.jpg",
     "id": "4",
     "recipe_name": "Grilled Salmon with Lemon and Dill",
     "short_description": "Juicy grilled salmon fillets with a refreshing lemon and dill sauce.",
@@ -61,7 +61,7 @@
     "calories": "350 calories"
   },
   {
-    "recipe_image": "recipe5.jpg",
+    "recipe_image": "https://i.ibb.co/TmmLH1w/chicken-grill.jpg",
     "id": "5",
     "recipe_name": "Banana Walnut Bread",
     "short_description": "Moist and delicious banana bread with crunchy walnuts.",
@@ -77,7 +77,7 @@
     "calories": "280 calories"
   },
   {
-    "recipe_image": "recipe6.jpg",
+    "recipe_image": "https://i.ibb.co/KF4hJxX/jilabi-bhai.jpg",
     "id": "6",
     "recipe_name": "Caprese Salad",
     "short_description": "Simple and fresh salad with tomatoes, mozzarella, and basil.",

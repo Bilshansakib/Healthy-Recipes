@@ -2,8 +2,20 @@ import { useState } from "react";
 import "./App.css";
 import Recipes from "./components/Recipes/Recipes";
 import WantToCook from "./components/WantToCook";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
+  const notify = () => {
+    <div className="toast">
+      <div className="alert alert-info">
+        <span>New message arrived.</span>
+      </div>
+    </div>;
+    toast("Default!");
+  };
+
   const [toCooks, setToCooks] = useState([]);
 
   const handleDelete = (id) => {
@@ -15,9 +27,7 @@ function App() {
     const isExist = toCooks.find((item) => item.id == cooking.id);
     if (!isExist) {
       setToCooks([...toCooks, cooking]);
-    } else {
-      alert("roast()");
-    }
+    } else notify();
   };
 
   return (
@@ -72,8 +82,8 @@ function App() {
                 </li>
               </ul>
             </div>
-            <a className="btn btn-ghost text-3xl font-extrabold">
-              Iftari Recipe
+            <a className="btn btn-ghost text-3xl rounded-full font-extrabold">
+              Healthy Recipe
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -102,8 +112,55 @@ function App() {
               </li>
             </ul>
           </div>
-          <div className="navbar-end">
-            <a className="btn">Button</a>
+
+          <div className="navbar-end gap-2">
+            <label className="input input-bordered flex items-center gap-2">
+              <input type="text" className="grow" placeholder="Search" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                className="w-4 h-4 opacity-70"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </label>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className=" rounded-full w-12 h-12"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div className="container lg:mx-auto banner">
+        <div className="mt-8 text-center justify-center items-center space-y-20 ">
+          <h1 className="text-3xl font-bold text-white  px-10">
+            Discover an exceptional cooking class tailored for you!
+          </h1>
+          <p className="text-white bg-slate-800 border-2 mx-12 p-6">
+            Remember, cooking is both an art and a science, and practice makes
+            perfect. Keep experimenting, trying new recipes, and honing your
+            skills to become a better cook.
+          </p>
+          <div className="space-x-4 text-white">
+            <button className="btn rounded-full">Explore Now</button>
+            <button className="border-2 p-2 rounded-full">Our Feedback</button>
           </div>
         </div>
       </div>
@@ -112,7 +169,8 @@ function App() {
         <h1 className=" text-3xl font-bold">Our Recipes</h1>
         <p className="my-6 font-semibold">
           A brief overview of the dish, including its origins, cultural
-          significance, or any interesting background information.
+          significance, or any interesting background information such as
+          calories.
         </p>
       </div>
 
@@ -121,6 +179,7 @@ function App() {
           <Recipes handleCookCart={handleCookCart}></Recipes>
         </div>
         <div className="col-span-3 ">
+          <Toaster position="top-right"></Toaster>
           <WantToCook
             handleDelete={handleDelete}
             toCooks={toCooks}
