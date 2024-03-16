@@ -11,6 +11,7 @@ const Recipes = ({ handleCookCart }) => {
         setRecipes(data);
       });
   }, []);
+
   return (
     <div className="grid grid-cols-2">
       {recipes.map((item) => (

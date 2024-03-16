@@ -6,13 +6,20 @@ import WantToCook from "./components/WantToCook";
 function App() {
   const [toCooks, setToCooks] = useState([]);
 
-  const handleCookCart = (pd) => {
-    console.log(pd);
-    const isExist = toCooks.find((p) => p.id == pd.id);
-    if (!isExist) {
-      setToCooks([...toCooks, pd]);
-    } else alert("Cart already exists");
+  const handleDelete = (id) => {
+    const newToCook = toCooks.filter((item) => item.id != id);
+    setToCooks(newToCook);
   };
+
+  const handleCookCart = (cooking) => {
+    const isExist = toCooks.find((item) => item.id == cooking.id);
+    if (!isExist) {
+      setToCooks([...toCooks, cooking]);
+    } else {
+      alert("roast()");
+    }
+  };
+
   return (
     <>
       <div className="container mx-auto">
@@ -98,7 +105,10 @@ function App() {
           <Recipes handleCookCart={handleCookCart}></Recipes>
         </div>
         <div className="col-span-3 ">
-          <WantToCook toCooks={toCooks}></WantToCook>
+          <WantToCook
+            handleDelete={handleDelete}
+            toCooks={toCooks}
+          ></WantToCook>
         </div>
       </div>
     </>
