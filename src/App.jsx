@@ -51,46 +51,54 @@ function App() {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a>Item 1</a>
+                  <a>Home</a>
                 </li>
                 <li>
-                  <a>Parent</a>
+                  <a>Recipes</a>
                   <ul className="p-2">
                     <li>
-                      <a>Submenu 1</a>
+                      <a>Menu Halal</a>
                     </li>
                     <li>
-                      <a>Submenu 2</a>
+                      <a>Menu Other</a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a>Item 3</a>
+                  <a>About</a>
+                </li>
+                <li>
+                  <a>Search</a>
                 </li>
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">daisyUI</a>
+            <a className="btn btn-ghost text-3xl font-extrabold">
+              Iftari Recipe
+            </a>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <a>Item 1</a>
+                <a>Home</a>
               </li>
               <li>
                 <details>
-                  <summary>Parent</summary>
+                  <summary>Recipes</summary>
                   <ul className="p-2">
                     <li>
-                      <a>Submenu 1</a>
+                      <a>Menu Halal</a>
                     </li>
                     <li>
-                      <a>Submenu 2</a>
+                      <a>Menu Other</a>
                     </li>
                   </ul>
                 </details>
               </li>
               <li>
-                <a>Item 3</a>
+                <a>About</a>
+              </li>
+              <li>
+                <a>Topics</a>
               </li>
             </ul>
           </div>
@@ -100,8 +108,16 @@ function App() {
         </div>
       </div>
 
+      <div className="container mx-auto my-6  text-center">
+        <h1 className=" text-3xl font-bold">Our Recipes</h1>
+        <p className="my-6 font-semibold">
+          A brief overview of the dish, including its origins, cultural
+          significance, or any interesting background information.
+        </p>
+      </div>
+
       <div className="container mx-auto grid grid-cols-7">
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-4 ">
           <Recipes handleCookCart={handleCookCart}></Recipes>
         </div>
         <div className="col-span-3 ">
