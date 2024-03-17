@@ -3,7 +3,7 @@ const PreparingCook = (preparingCart, handlePreparingCart) => {
   return (
     <>
       <div>
-        <div className="grid grid-cols-4 items-center font-semibold text-2xl p-2  text-start bg-slate-200 rounded-2xl">
+        <div className="grid grid-cols-4 items-center font-semibold text-2xl p-2 opacity-85 text-start text-white bg-slate-800 rounded-2xl">
           <div className="col-span-2">Name</div>
           <div>Time</div>
           <div>Calories</div>

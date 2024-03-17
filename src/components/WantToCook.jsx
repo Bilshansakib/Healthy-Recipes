@@ -14,17 +14,17 @@ const WantToCook = ({
         </h2>
         <div className="divider"></div>
 
-        <div className="grid grid-cols-5 items-center font-semibold text-2xl p-2  text-start bg-slate-200 rounded-2xl">
+        <div className="grid grid-cols-5 items-center font-semibold text-2xl p-2  text-start text-white bg-slate-800 rounded-2xl">
           <div>No.</div>
           <div>Name</div>
           <div>Time</div>
           <div>Calories</div>
           <div className="card-actions"></div>
         </div>
-        <div className="toCook-container grid grid-cols-5 font-semibold text-start items-center space-y-2 p-2">
+        <div className="toCook-container grid grid-cols-5 font-bold text-start items-center space-y-2 p-2 bg-slate-300 rounded-xl py-4">
           {toCooks.map((item, index) => (
             <>
-              <h2>{index + 1}</h2>
+              <h2>{index + 1} .</h2>
               <h2>{item.recipe_name}</h2>
               <h2>{item.preparing_time}</h2>
               <h2>{item.calories}</h2>

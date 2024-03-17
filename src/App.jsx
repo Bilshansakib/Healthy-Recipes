@@ -35,7 +35,26 @@ function App() {
     }
     // handlePreparingCart();
   };
+  // //////////////////
 
+  function TotalSum() {
+    const [values, setValues] = useState([]);
+  }
+  const addValue = () => {
+    const newValues = [...values, 0];
+    setValues(newValues);
+
+    const updateValue = (index, newValue) => {
+      const newValues = [...values];
+      newValues[index] = newValue;
+      setValues(newValues);
+    };
+    const calculateSum = () => {
+      const sum = values.reduce((acc, curr) => acc + parseInt(curr), 0);
+      return sum;
+    };
+  };
+  // ///////////////////////
   return (
     <>
       <div className="container mx-auto mt-8">
@@ -93,7 +112,7 @@ function App() {
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal px-1 font-bold">
               <li>
                 <a>Home</a>
               </li>
@@ -105,7 +124,7 @@ function App() {
                       <a>Menu Halal</a>
                     </li>
                     <li>
-                      <a>Menu Other</a>
+                      <a>Menu Others</a>
                     </li>
                   </ul>
                 </details>
@@ -202,10 +221,10 @@ function App() {
             preparingCart={preparingCart}
             handlePreparingCart={handlePreparingCart}
           ></PreparingCook>
-          <div className="grid grid-cols-4 items-center font-semibold text-2xl p-2  text-start rounded-2xl">
+          <div className="grid grid-cols-4 items-center font-semibold text-xl p-2 opacity-85  text-start rounded-2xl">
             {preparingCart.map((item, index) => (
               <>
-                <h2 className="col-span-2">
+                <h2 className="col-span-2 space-x-2">
                   {index + 1}. {item.recipe_name}
                 </h2>
                 <h2>{item.preparing_time}</h2>
@@ -213,6 +232,22 @@ function App() {
               </>
             ))}
           </div>
+          <div className="divider"></div>
+          {preparingCart.map((item) => (
+            <>
+              <div className="grid grid-cols-3 ">
+                <div></div>
+                <div>
+                  <span>Total Time =</span>
+                  <span>{() => TotalSum(item.preparing_time)} minutes</span>
+                </div>
+                <div>
+                  <span>Total Calories =</span>
+                  <span>{} calories</span>
+                </div>
+              </div>
+            </>
+          ))}
         </div>
         <ToastContainer></ToastContainer>
       </div>
