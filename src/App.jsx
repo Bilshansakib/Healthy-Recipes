@@ -17,6 +17,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setToCooks(data);
+        setPreparingCart(data);
       });
   }, []);
 
