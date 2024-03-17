@@ -18,11 +18,11 @@ function App() {
   };
 
   const handlePreparingCart = (p) => {
-    // const isThere = preparingCart.find((pd) => pd.id == p.id);
-    // if (!isThere) {
-    //   setPreparingCart([...preparingCart, p]);
-    // }
-    setPreparingCart([p]);
+    const isThere = preparingCart.find((pd) => pd.id == p.id);
+    if (!isThere) {
+      setPreparingCart([...preparingCart, p]);
+    }
+    // setPreparingCart([p]);
   };
   console.log(preparingCart);
 
@@ -194,7 +194,7 @@ function App() {
 
           <div>
             <h2 className="mt-6 text-3xl font-bold text-center ">
-              Currently cooking: {toCooks.length}
+              Currently cooking: {preparingCart.length}
             </h2>
           </div>
           <div className="divider"></div>
@@ -202,6 +202,17 @@ function App() {
             preparingCart={preparingCart}
             handlePreparingCart={handlePreparingCart}
           ></PreparingCook>
+          <div className="grid grid-cols-4 items-center font-semibold text-2xl p-2  text-start rounded-2xl">
+            {preparingCart.map((item, index) => (
+              <>
+                <h2 className="col-span-2">
+                  {index + 1}. {item.recipe_name}
+                </h2>
+                <h2>{item.preparing_time}</h2>
+                <h2>{item.calories}</h2>
+              </>
+            ))}
+          </div>
         </div>
         <ToastContainer></ToastContainer>
       </div>
