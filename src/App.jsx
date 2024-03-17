@@ -12,14 +12,20 @@ function App() {
   const [preparingCart, setPreparingCart] = useState([]);
   // const [currentlyCooking, setcurrentlyCooking] = useState([]);
 
-  useEffect(() => {
-    fetch("./RecipeData.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setToCooks(data);
-        setPreparingCart(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("./RecipeData.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setToCooks(data);
+  //     });
+  // }, []);
+  // useEffect(() => {
+  //   fetch("./RecipeData.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setPreparingCart(data);
+  //     });
+  // }, []);
 
   const handleDelete = (id) => {
     const newToCook = toCooks.filter((item) => item.id != id);

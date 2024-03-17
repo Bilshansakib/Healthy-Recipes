@@ -5,7 +5,7 @@ const Recipes = ({ handleCookCart }) => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("/public/RecipeData.json")
+    fetch("./RecipeData.json")
       .then((res) => res.json())
       .then((data) => {
         setRecipes(data);
