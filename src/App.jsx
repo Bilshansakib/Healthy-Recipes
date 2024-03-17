@@ -4,14 +4,27 @@ import Recipes from "./components/Recipes/Recipes";
 import WantToCook from "./components/WantToCook";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PreparingCook from "./components/PreparingCook";
 
 function App() {
   const [toCooks, setToCooks] = useState([]);
+  const [preparingCart, setPreparingCart] = useState([]);
+  // const [currentlyCooking, setcurrentlyCooking] = useState([]);
 
   const handleDelete = (id) => {
     const newToCook = toCooks.filter((item) => item.id != id);
     setToCooks(newToCook);
+    // handlePreparingCart(newToCook);
   };
+
+  const handlePreparingCart = (p) => {
+    // const isThere = preparingCart.find((pd) => pd.id == p.id);
+    // if (!isThere) {
+    //   setPreparingCart([...preparingCart, p]);
+    // }
+    setPreparingCart([p]);
+  };
+  console.log(preparingCart);
 
   const handleCookCart = (cooking) => {
     const isExist = toCooks.find((item) => item.id == cooking.id);
@@ -20,6 +33,7 @@ function App() {
     } else {
       toast("Already added");
     }
+    // handlePreparingCart();
   };
 
   return (
@@ -170,12 +184,24 @@ function App() {
         <div className="lg:col-span-4 ">
           <Recipes handleCookCart={handleCookCart}></Recipes>
         </div>
-
         <div className="col-span-3 ">
           <WantToCook
             handleDelete={handleDelete}
             toCooks={toCooks}
+            preparingCart={preparingCart}
+            handlePreparingCart={handlePreparingCart}
           ></WantToCook>
+
+          <div>
+            <h2 className="mt-6 text-3xl font-bold text-center ">
+              Currently cooking: {toCooks.length}
+            </h2>
+          </div>
+          <div className="divider"></div>
+          <PreparingCook
+            preparingCart={preparingCart}
+            handlePreparingCart={handlePreparingCart}
+          ></PreparingCook>
         </div>
         <ToastContainer></ToastContainer>
       </div>
