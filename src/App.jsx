@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Recipes from "./components/Recipes/Recipes";
 import WantToCook from "./components/WantToCook";
@@ -11,6 +11,14 @@ function App() {
   const [toCooks, setToCooks] = useState([]);
   const [preparingCart, setPreparingCart] = useState([]);
   // const [currentlyCooking, setcurrentlyCooking] = useState([]);
+
+  useEffect(() => {
+    fetch("./RecipeData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setToCooks(data);
+      });
+  }, []);
 
   const handleDelete = (id) => {
     const newToCook = toCooks.filter((item) => item.id != id);
