@@ -9,28 +9,31 @@ const Recipe = ({ recipe, handleCookCart, notify }) => {
     calories,
   } = recipe;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl border-2">
+    <div className="card w-80 bg-base-100 shadow-xl border-2">
       <figure className="px-10 pt-10">
         <img src={recipe_image} alt="food" className="rounded-xl" />
       </figure>
-      <div className="card-body items-start text-center">
-        <h2 className="card-title">{recipe_name}</h2>
-        <p>{short_description}</p>
+      <div className="card-body ">
+        <h2 className="card-title font-bold">{recipe_name}</h2>
+        <p className=" opacity-85 font-semibold">{short_description}</p>
 
         <div className="divider"></div>
 
-        <div className="">
-          <h1 className="font-bold">Ingredients: {ingredients.length}</h1>
-          <ul>
-            <li>{ingredients[0]}</li>
-            <li>{ingredients[1]}</li>
-            <li>{ingredients[2]}</li>
+        <div className="justify-start items-start text-sm font-bold opacity-85 space-y-2">
+          <h1 className="font-bold text-2xl">
+            Ingredients: {ingredients.length}
+          </h1>
+          <p className="text-xs">| key features |</p>
+          <ul className="circle">
+            <li>* {ingredients[0]}</li>
+            <li>* {ingredients[1]}</li>
+            <li>* {ingredients[2]}</li>
           </ul>
         </div>
 
         <div className="divider"></div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4  opacity-85 font-semibold">
           <div className="flex gap-2">
             <span>
               <svg
@@ -75,7 +78,7 @@ const Recipe = ({ recipe, handleCookCart, notify }) => {
             <span>{calories}</span>
           </div>
         </div>
-        <div className="card-actions">
+        <div className=" mt-2 w-full">
           <button
             className="btn btn-primary rounded-full"
             onClick={() => handleCookCart(recipe)}

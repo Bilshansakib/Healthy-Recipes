@@ -2,7 +2,9 @@ const WantToCook = ({ toCooks, index, handleDelete }) => {
   return (
     <div className="card w-full bg-base-100 shadow-xl">
       <div className="card-body">
-        <h2 className="text-3xl font-bold text-center ">Want to cook: </h2>
+        <h2 className="text-3xl font-bold text-center ">
+          Want to cook: {toCooks.length}
+        </h2>
         <div className="divider"></div>
 
         <div className="grid grid-cols-5 items-center font-semibold text-2xl  text-start">

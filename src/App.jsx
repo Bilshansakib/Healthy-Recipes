@@ -18,13 +18,13 @@ function App() {
     if (!isExist) {
       setToCooks([...toCooks, cooking]);
     } else {
-      toast("Already added to the card");
+      toast("Already added");
     }
   };
 
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-8">
         <div className="navbar bg-base-100">
           <div className="navbar-start">
             <div className="dropdown">
@@ -59,10 +59,10 @@ function App() {
                   <a>Recipes</a>
                   <ul className="p-2">
                     <li>
-                      <a>Menu Halal</a>
+                      <a>Diet Menu</a>
                     </li>
                     <li>
-                      <a>Menu Other</a>
+                      <a>Other Menu</a>
                     </li>
                   </ul>
                 </li>
@@ -75,7 +75,7 @@ function App() {
               </ul>
             </div>
             <a className="btn btn-ghost text-3xl rounded-full font-extrabold">
-              Healthy Recipe
+              Healthy Recipes
             </a>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -145,7 +145,7 @@ function App() {
           <h1 className="text-3xl font-bold text-white  px-10">
             Discover an exceptional cooking class tailored for you!
           </h1>
-          <p className="text-white bg-slate-800 border-2 mx-12 p-6">
+          <p className="text-white rounded-2xl bg-slate-800 border-2 mx-12 p-6">
             Remember, cooking is both an art and a science, and practice makes
             perfect. Keep experimenting, trying new recipes, and honing your
             skills to become a better cook.
@@ -157,7 +157,7 @@ function App() {
         </div>
       </div>
 
-      <div className="container mx-auto my-6  text-center">
+      <div className="container mx-auto my-12  text-center">
         <h1 className=" text-3xl font-bold">Our Recipes</h1>
         <p className="my-6 font-semibold">
           A brief overview of the dish, including its origins, cultural
