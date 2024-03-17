@@ -5,6 +5,7 @@ import WantToCook from "./components/WantToCook";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PreparingCook from "./components/PreparingCook";
+import CalculateSum from "./components/CalculateSum";
 
 function App() {
   const [toCooks, setToCooks] = useState([]);
@@ -24,7 +25,6 @@ function App() {
     }
     // setPreparingCart([p]);
   };
-  console.log(preparingCart);
 
   const handleCookCart = (cooking) => {
     const isExist = toCooks.find((item) => item.id == cooking.id);
@@ -36,25 +36,6 @@ function App() {
     // handlePreparingCart();
   };
   // //////////////////
-
-  function TotalSum() {
-    const [values, setValues] = useState([]);
-  }
-  const addValue = () => {
-    const newValues = [...values, 0];
-    setValues(newValues);
-
-    const updateValue = (index, newValue) => {
-      const newValues = [...values];
-      newValues[index] = newValue;
-      setValues(newValues);
-    };
-    const calculateSum = () => {
-      const sum = values.reduce((acc, curr) => acc + parseInt(curr), 0);
-      return sum;
-    };
-  };
-  // ///////////////////////
   return (
     <>
       <div className="container mx-auto mt-8">
@@ -233,22 +214,10 @@ function App() {
             ))}
           </div>
           <div className="divider"></div>
-          {preparingCart.map((item) => (
-            <>
-              <div className="grid grid-cols-3 ">
-                <div></div>
-                <div>
-                  <span>Total Time =</span>
-                  <span>{() => TotalSum(item.preparing_time)} minutes</span>
-                </div>
-                <div>
-                  <span>Total Calories =</span>
-                  <span>{} calories</span>
-                </div>
-              </div>
-            </>
-          ))}
+
+          <CalculateSum preparingCart={preparingCart}></CalculateSum>
         </div>
+
         <ToastContainer></ToastContainer>
       </div>
     </>

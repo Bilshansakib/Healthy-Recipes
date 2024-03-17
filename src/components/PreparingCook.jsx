@@ -1,5 +1,4 @@
 const PreparingCook = (preparingCart, handlePreparingCart) => {
-  console.log(preparingCart);
   return (
     <>
       <div>
